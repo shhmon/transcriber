@@ -4,7 +4,7 @@ import os
 class OpenAIAPI:
     def __init__(self, model_name="gpt-3.5-turbo", max_tokens=2000):
         self.client = AsyncOpenAI(
-            api_key="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"
+            api_key=os.getenv("OPENAI_API_KEY")
         )
 
         self.model_name = model_name
