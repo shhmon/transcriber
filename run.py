@@ -58,15 +58,4 @@ async def main():
         sys.exit(0)
 
 if __name__ == "__main__":
-    devices = get_valid_input_devices()
-
-    print("Select input device index:")
-
-    for d in devices:
-        print(f'{d["index"]}. {d["name"]}')
-
-    device = input('Device:')
-
-    thread = start_transcription(int(device))
-
-    thread.join()
+    asyncio.run(main())
